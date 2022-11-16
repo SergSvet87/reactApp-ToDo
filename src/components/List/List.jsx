@@ -5,32 +5,25 @@ import removeSvg from '../../assets/img/icons/remove.svg'
 import './List.scss'
 
 export const List = ({
-  lessons,
+  items,
   isRemovable,
   onClick,
-  onRemove,
+  removeList,
   onClickItem,
-  isActive,
-  // activeItem,
+  activeItem,
 }) => {
-  const removeList = (lesson) => {
-    if (window.confirm('Ви дійсно бажаєте видалити цей список?')) {
-      onRemove(lesson.title)
-    }
-  }
 
   return (
     <ul onClick={onClick} className="list">
-      {lessons.map((lesson, index) => (
+      {items?.lessons.map((lesson, index) => (
+        
         <li
           key={index}
-          className={`${isActive ? 'active' : ''}`}
-          onClick={onClickItem ? () => onClickItem(lesson) : null}
+          className={`${activeItem ? 'active' : ''}`}
+          onClick={onClickItem => onClickItem(index)}
         >
-          <i>{lesson.icon}</i>
           <span>
             {lesson.name}
-            {lesson.title}
             {lesson.tasks && ` (${lesson.tasks.length})`}
           </span>
           {isRemovable && (
@@ -38,7 +31,7 @@ export const List = ({
               className="list__remove-icon"
               src={removeSvg}
               alt="Remove icon"
-              onClick={() => removeList(lesson)}
+              onClick={removeList}
             />
           )}
         </li>

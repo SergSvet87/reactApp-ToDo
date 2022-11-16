@@ -3,35 +3,55 @@
 }
 
 h1 {
-  margin-top: 20px;
+  margin: 30px 0 10px;
   text-align: center;
+  color: #f1f1f1;
+  text-shadow: 0px 20px 5px #212121;
 }
 
 .todo {
-  width: 750px;
-  height: 530px;
-  margin: 80px auto;
+  width: 950px;
+  // min-height: 530px;
+  margin: 30px auto 80px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   box-shadow: 1px 2px 20px #f3f3f3;
   border-radius: 10px;
-  border: 1px solid #f1f1f1;
+  border: 2px solid #f1f1f1;
 
   &__sidebar {
-    width: 200px;
+    min-width: 250px;
     height: 100%;
     background-color: #f4f6f8;
+    font-size: 16px;
     border-right: 1px solid #f1f1f1;
-    padding: 60px 20px;
+    padding: 60px 10px;
     border-radius: 8px;
   }
 
   &__tasks {
-    width: 100%;
+    max-width: 700px;
     height: 100%;
-    padding: 80px 40px;
+    padding: 60px 40px;
 
     color: #f1f1f1;
+  }
+}
+
+.sidebar {
+
+  &__title{
+    font-size: 32px;
+    color: #2c3248;
+    margin-bottom: 20px;
+
+    img {
+      display: inline-block;
+      position: relative;
+      bottom: -4px;
+      margin-right: 15px;
+      opacity: 0.7;
+    }
   }
 }

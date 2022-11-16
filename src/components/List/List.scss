@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    padding: 5px 12px;
+    padding: 5px 7px;
     margin-bottom: 10px;
     transition: background-color 0.15s ease-in-out;
 
@@ -38,6 +38,7 @@
     span {
       flex: 1;
       text-overflow: ellipsis;
+      text-transform: capitalize;
       overflow: hidden;
       width: 160px;
       white-space: nowrap;
